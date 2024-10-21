@@ -11,6 +11,9 @@ export default function Home() {
         <Link href="/cronparser" className="text-xl text-blue-600 hover:underline">
           Cron Parser
         </Link>
+        <Link href="/diff" className="text-xl text-blue-600 hover:underline">
+          Diff Tool
+        </Link>
       </div>
     </div>
   );
