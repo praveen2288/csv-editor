@@ -17,6 +17,9 @@ export default function Home() {
         <Link href="/clock" className="text-xl text-blue-600 hover:underline">
           Clock, Timer and Stopwatch
         </Link>
+        <Link href="/agecalculator" className="text-xl text-blue-600 hover:underline">
+          Age Calculator
+        </Link>
       </div>
     </div>
   );
