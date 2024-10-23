@@ -14,6 +14,9 @@ export default function Home() {
         <Link href="/diff" className="text-xl text-blue-600 hover:underline">
           Diff Tool
         </Link>
+        <Link href="/clock" className="text-xl text-blue-600 hover:underline">
+          Clock, Timer and Stopwatch
+        </Link>
       </div>
     </div>
   );
