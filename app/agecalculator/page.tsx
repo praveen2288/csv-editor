@@ -65,75 +65,76 @@ export default function Component() {
   }
 
   return (
-    <Card className="w-full max-w-lg">
-      <CardHeader>
-        <CardTitle>Precise Age Calculator</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="grid gap-4">
-          <div className="grid gap-2">
-            <Label htmlFor="birth-year">Birth Year</Label>
-            <Select onValueChange={handleYearSelect} value={selectedYear?.toString()}>
-              <SelectTrigger id="birth-year">
-                <SelectValue placeholder="Select Year" />
-              </SelectTrigger>
-              <SelectContent>
-                {Array.from({ length: toYear - fromYear + 1 }, (_, index) => toYear - index).map((year) => (
-                  <SelectItem key={year} value={year.toString()}>
-                    {year}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="birth-date">Birth Date</Label>
-            <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
-              <PopoverTrigger asChild>
-                <Button
-                  id="birth-date"
-                  variant={"outline"}
-                  className={`w-full justify-start text-left font-normal ${
-                    !birthDate && "text-muted-foreground"
-                  }`}
-                  onClick={() => setCalendarOpen(true)}
-                >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
-                  {birthDate ? birthDate.toDateString() : "Pick a date"}
-                </Button>
-              </PopoverTrigger>
-              <PopoverContent className="w-auto p-0">
-                <Calendar
-                  mode="single"
-                  selected={birthDate}
-                  onSelect={handleDateSelect}
-                  fromYear={fromYear}
-                  toYear={toYear}
-                  defaultMonth={birthDate || (selectedYear ? new Date(selectedYear, 0) : undefined)}
-                  initialFocus
+    <div className="flex items-center justify-center min-h-screen">
+      <Card className="w-full max-w-lg">
+        <CardHeader>
+          <CardTitle>Precise Age Calculator</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <div className="grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="birth-year">Birth Year</Label>
+              <Select onValueChange={handleYearSelect} value={selectedYear?.toString()}>
+                <SelectTrigger id="birth-year">
+                  <SelectValue placeholder="Select Year" />
+                </SelectTrigger>
+                <SelectContent>
+                  {Array.from({ length: toYear - fromYear + 1 }, (_, index) => toYear - index).map((year) => (
+                    <SelectItem key={year} value={year.toString()}>
+                      {year}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="birth-date">Birth Date</Label>
+              <Popover open={calendarOpen} onOpenChange={setCalendarOpen}>
+                <PopoverTrigger asChild>
+                  <Button
+                    id="birth-date"
+                    variant={"outline"}
+                    className={`w-full justify-start text-left font-normal ${!birthDate && "text-muted-foreground"
+                      }`}
+                    onClick={() => setCalendarOpen(true)}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {birthDate ? birthDate.toDateString() : "Pick a date"}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0">
+                  <Calendar
+                    mode="single"
+                    selected={birthDate}
+                    onSelect={handleDateSelect}
+                    fromYear={fromYear}
+                    toYear={toYear}
+                    defaultMonth={birthDate || (selectedYear ? new Date(selectedYear, 0) : undefined)}
+                    initialFocus
+                  />
+                </PopoverContent>
+              </Popover>
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="birth-time">Birth Time</Label>
+              <div className="flex items-center">
+                <Clock className="mr-2 h-4 w-4 text-muted-foreground" />
+                <Input
+                  id="birth-time"
+                  type="time"
+                  value={birthTime}
+                  onChange={(e) => setBirthTime(e.target.value)}
+                  className="w-full"
                 />
-              </PopoverContent>
-            </Popover>
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="birth-time">Birth Time</Label>
-            <div className="flex items-center">
-              <Clock className="mr-2 h-4 w-4 text-muted-foreground" />
-              <Input
-                id="birth-time"
-                type="time"
-                value={birthTime}
-                onChange={(e) => setBirthTime(e.target.value)}
-                className="w-full"
-              />
+              </div>
+            </div>
+            <div className="mt-4">
+              <h3 className="text-lg font-semibold">Your Age:</h3>
+              <p className="text-muted-foreground">{age}</p>
             </div>
           </div>
-          <div className="mt-4">
-            <h3 className="text-lg font-semibold">Your Age:</h3>
-            <p className="text-muted-foreground">{age}</p>
-          </div>
-        </div>
-      </CardContent>
-    </Card>
+        </CardContent>
+      </Card>
+    </div>
   )
 }

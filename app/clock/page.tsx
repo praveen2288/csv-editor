@@ -143,102 +143,104 @@ export default function ClockTimerStopwatchWorldClock() {
   }
 
   return (
-    <Card className="w-full max-w-md mx-auto">
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold text-center">Timer, Stopwatch & World Clock</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <Tabs defaultValue="timer">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="timer">Timer</TabsTrigger>
-            <TabsTrigger value="stopwatch">Stopwatch</TabsTrigger>
-            <TabsTrigger value="worldclock">World Clock</TabsTrigger>
-          </TabsList>
-          <TabsContent value="timer">
-            <div className="flex justify-center space-x-4 mb-4">
-              <div className="text-center">
-                <p>Hours</p>
-                <ScrollableInput value={hours} onChange={setHours} max={23} />
+    <div className="flex items-center justify-center min-h-screen">
+      <Card className="w-full max-w-md mx-auto">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-center">Timer, Stopwatch & World Clock</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <Tabs defaultValue="timer">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="timer">Timer</TabsTrigger>
+              <TabsTrigger value="stopwatch">Stopwatch</TabsTrigger>
+              <TabsTrigger value="worldclock">World Clock</TabsTrigger>
+            </TabsList>
+            <TabsContent value="timer">
+              <div className="flex justify-center space-x-4 mb-4">
+                <div className="text-center">
+                  <p>Hours</p>
+                  <ScrollableInput value={hours} onChange={setHours} max={23} />
+                </div>
+                <div className="text-center">
+                  <p>Minutes</p>
+                  <ScrollableInput value={minutes} onChange={setMinutes} max={59} />
+                </div>
+                <div className="text-center">
+                  <p>Seconds</p>
+                  <ScrollableInput value={seconds} onChange={setSeconds} max={59} />
+                </div>
               </div>
-              <div className="text-center">
-                <p>Minutes</p>
-                <ScrollableInput value={minutes} onChange={setMinutes} max={59} />
+              <div className="text-center mb-4">
+                <p className="text-3xl font-bold">{formatTime(timeLeft)}</p>
               </div>
-              <div className="text-center">
-                <p>Seconds</p>
-                <ScrollableInput value={seconds} onChange={setSeconds} max={59} />
-              </div>
-            </div>
-            <div className="text-center mb-4">
-              <p className="text-3xl font-bold">{formatTime(timeLeft)}</p>
-            </div>
-            <Button 
-              onClick={startTimer} 
-              disabled={isTimerRunning} 
-              className="w-full"
-            >
-              {isTimerRunning ? 'Timer Running' : 'Start Timer'}
-            </Button>
-          </TabsContent>
-          <TabsContent value="stopwatch">
-            <div className="text-center mb-4">
-              <p className="text-3xl font-bold">{formatStopwatchTime(stopwatchTime)}</p>
-            </div>
-            <div className="flex justify-center space-x-2 mb-4">
-              <Button onClick={toggleStopwatch}>
-                {isStopwatchRunning ? 'Pause' : 'Start'}
+              <Button
+                onClick={startTimer}
+                disabled={isTimerRunning}
+                className="w-full"
+              >
+                {isTimerRunning ? 'Timer Running' : 'Start Timer'}
               </Button>
-              <Button onClick={resetStopwatch}>Reset</Button>
-              <Button onClick={recordLap} disabled={!isStopwatchRunning}>Lap</Button>
-            </div>
-            <div className="max-h-40 overflow-y-auto">
-              {laps.map((lap, index) => (
-                <div key={index} className="text-center">
-                  Lap {index + 1}: {formatStopwatchTime(lap)}
-                </div>
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="worldclock">
-            <div className="mb-4">
-              <Input
-                type="text"
-                placeholder="City Name"
-                value={newCity}
-                onChange={(e) => setNewCity(e.target.value)}
-                className="mb-2"
-              />
-              <Input
-                type="text"
-                placeholder="Time Zone (e.g., America/New_York)"
-                value={newTimeZone}
-                onChange={(e) => setNewTimeZone(e.target.value)}
-                className="mb-2"
-              />
-              <Button onClick={addCity} className="w-full">Add City</Button>
-            </div>
-            <div className="max-h-60 overflow-y-auto">
-              {cities.map((city, index) => (
-                <div key={index} className="flex justify-between items-center mb-2">
-                  <span>{city.name}: </span>
-                  <span>
-                    {new Intl.DateTimeFormat('en-US', {
-                      timeZone: city.timeZone,
-                      hour: '2-digit',
-                      minute: '2-digit',
-                      second: '2-digit',
-                      hour12: true
-                    }).format(currentTime)}
-                  </span>
-                  <Button variant="ghost" size="sm" onClick={() => removeCity(index)}>
-                    <X className="h-4 w-4" />
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
-      </CardContent>
-    </Card>
+            </TabsContent>
+            <TabsContent value="stopwatch">
+              <div className="text-center mb-4">
+                <p className="text-3xl font-bold">{formatStopwatchTime(stopwatchTime)}</p>
+              </div>
+              <div className="flex justify-center space-x-2 mb-4">
+                <Button onClick={toggleStopwatch}>
+                  {isStopwatchRunning ? 'Pause' : 'Start'}
+                </Button>
+                <Button onClick={resetStopwatch}>Reset</Button>
+                <Button onClick={recordLap} disabled={!isStopwatchRunning}>Lap</Button>
+              </div>
+              <div className="max-h-40 overflow-y-auto">
+                {laps.map((lap, index) => (
+                  <div key={index} className="text-center">
+                    Lap {index + 1}: {formatStopwatchTime(lap)}
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="worldclock">
+              <div className="mb-4">
+                <Input
+                  type="text"
+                  placeholder="City Name"
+                  value={newCity}
+                  onChange={(e) => setNewCity(e.target.value)}
+                  className="mb-2"
+                />
+                <Input
+                  type="text"
+                  placeholder="Time Zone (e.g., America/New_York)"
+                  value={newTimeZone}
+                  onChange={(e) => setNewTimeZone(e.target.value)}
+                  className="mb-2"
+                />
+                <Button onClick={addCity} className="w-full">Add City</Button>
+              </div>
+              <div className="max-h-60 overflow-y-auto">
+                {cities.map((city, index) => (
+                  <div key={index} className="flex justify-between items-center mb-2">
+                    <span>{city.name}: </span>
+                    <span>
+                      {new Intl.DateTimeFormat('en-US', {
+                        timeZone: city.timeZone,
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        hour12: true
+                      }).format(currentTime)}
+                    </span>
+                    <Button variant="ghost" size="sm" onClick={() => removeCity(index)}>
+                      <X className="h-4 w-4" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+        </CardContent>
+      </Card>
+    </div>
   )
 }
