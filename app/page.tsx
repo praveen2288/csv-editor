@@ -23,6 +23,9 @@ export default function Home() {
         <Link href="/agecalculator" className="text-xl text-blue-600 hover:underline">
           Age Calculator
         </Link>
+        <Link href="/passwordgenerator" className="text-xl text-blue-600 hover:underline">
+          Password Generator
+        </Link>
       </div>
     </div>
   );
