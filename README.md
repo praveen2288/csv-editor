@@ -76,6 +76,11 @@ To get a local copy up and running, follow these simple steps.
    ```sh
    npm start
    ```
+4. (Optional) Run the linter
+   ```sh
+   npm run lint
+   ```
+   If `next` isn't installed, the command prints a warning and continues.
 
 ## Contributing
 
