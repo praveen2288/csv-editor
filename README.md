@@ -53,6 +53,12 @@ Live Demo - https://snaptools.netlify.app/
   - Convert plain text into Base64.
   - Decode Base64 back to human-readable text.
 
+### Markdown Previewer
+- **Description**: Write Markdown and see the rendered preview side by side.
+- **Features**:
+  - Live preview while typing.
+  - Supports common Markdown formatting like headings, lists and links.
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.
