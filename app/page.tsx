@@ -26,6 +26,9 @@ export default function Home() {
         <Link href="/passwordgenerator" className="text-xl text-blue-600 hover:underline">
           Password Generator
         </Link>
+        <Link href="/qrcode" className="text-xl text-blue-600 hover:underline">
+          QR Code Generator
+        </Link>
       </div>
     </div>
   );
