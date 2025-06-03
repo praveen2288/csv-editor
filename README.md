@@ -41,6 +41,12 @@ Live Demo - https://snaptools.netlify.app/
   - Input birthdate to calculate exact age.
   - Display age in years, months, and days.
 
+### JSON Formatter/Validator
+- **Description**: Quickly format and validate JSON data in the browser.
+- **Features**:
+  - Paste JSON text to format it with proper indentation.
+  - Validation feedback if the input is not valid JSON.
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.

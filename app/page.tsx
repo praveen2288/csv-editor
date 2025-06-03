@@ -29,6 +29,9 @@ export default function Home() {
         <Link href="/qrcode" className="text-xl text-blue-600 hover:underline">
           QR Code Generator
         </Link>
+        <Link href="/jsonformatter" className="text-xl text-blue-600 hover:underline">
+          JSON Formatter/Validator
+        </Link>
       </div>
     </div>
   );
