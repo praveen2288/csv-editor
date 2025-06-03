@@ -47,6 +47,12 @@ Live Demo - https://snaptools.netlify.app/
   - Paste JSON text to format it with proper indentation.
   - Validation feedback if the input is not valid JSON.
 
+### Base64 Encoder/Decoder
+- **Description**: Encode text to Base64 and decode Base64 strings.
+- **Features**:
+  - Convert plain text into Base64.
+  - Decode Base64 back to human-readable text.
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.
