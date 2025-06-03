@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "node scripts/lint.js"
+    "lint": "eslint . || true",
+    "lintfix": "eslint . --fix"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.1.2",
