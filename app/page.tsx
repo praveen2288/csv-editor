@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <h1 className="text-4xl font-bold text-gray-800 mb-8">SNAP Tools</h1>
-      <div className="space-x-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-center">
         <Link href="/calculator" className="text-xl text-blue-600 hover:underline">
           Calculator & Unit Converter
         </Link>
@@ -34,6 +34,9 @@ export default function Home() {
         </Link>
         <Link href="/jsonformatter" className="text-xl text-blue-600 hover:underline">
           JSON Formatter/Validator
+        </Link>
+        <Link href="/markdown" className="text-xl text-blue-600 hover:underline">
+          Markdown Previewer
         </Link>
       </div>
     </div>
