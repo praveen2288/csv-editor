@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import Link from 'next/link'
 
 type CalculationType = 'standard' | 'length' | 'weight' | 'temperature'
 
@@ -169,6 +170,12 @@ export default function AdvancedCalculator() {
 
   return (
     <div className="w-full max-w-md mx-auto p-4 bg-background rounded-lg shadow-lg">
+      <Link
+        href="/"
+        className="fixed top-4 left-4 text-blue-600 hover:underline"
+      >
+        Back to Home
+      </Link>
       <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as CalculationType)} className="w-full">
         <TabsList className="grid w-full grid-cols-4 mb-4">
           <TabsTrigger value="standard">Standard</TabsTrigger>

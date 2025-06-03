@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Trash2, Plus, ArrowUp, ArrowDown, ArrowUpDown, Search } from 'lucide-react'
+import Link from 'next/link'
 
 type SortConfig = {
   key: number;
@@ -130,6 +131,12 @@ export default function CSVEditor() {
 
   return (
     <div className="max-w-[90%] mx-auto p-4 bg-background">
+      <Link
+        href="/"
+        className="fixed top-4 left-4 text-blue-600 hover:underline"
+      >
+        Back to Home
+      </Link>
       <h1 className="text-2xl font-bold mb-4">CSV Editor</h1>
       <div className="flex flex-wrap gap-4 mb-4">
         <Button onClick={handleFileImport}>Import CSV</Button>

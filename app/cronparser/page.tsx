@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { InfoIcon } from 'lucide-react'
 import { parseExpression } from 'cron-parser'
+import Link from 'next/link'
 
 
 // Note: In a real-world scenario, you'd install cron-parser via npm.
@@ -66,7 +67,13 @@ export default function CronExplainer() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen">
+        <Link
+          href="/"
+          className="fixed top-4 left-4 text-blue-600 hover:underline"
+        >
+          Back to Home
+        </Link>
         <Card className="w-full max-w-2xl m-auto">
         <CardHeader>
             <CardTitle>Cron Expression Explainer</CardTitle>
