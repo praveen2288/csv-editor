@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import Link from 'next/link'
 
 type CalculationType = 'standard' | 'length' | 'weight' | 'temperature'
 
@@ -288,6 +289,11 @@ export default function AdvancedCalculator() {
             <div key={index} className="text-sm mb-1">{item}</div>
           ))}
         </ScrollArea>
+      </div>
+      <div className="text-center mt-4">
+        <Link href="/" className="text-blue-600 hover:underline">
+          Back to Home
+        </Link>
       </div>
     </div>
   )

@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Textarea } from "@/components/ui/textarea"
 import * as diff from 'diff'
+import Link from 'next/link'
 
 export default function DiffApp() {
   const [leftText, setLeftText] = useState('')
@@ -101,6 +102,11 @@ export default function DiffApp() {
             </div>
           </ScrollArea>
         </div>
+      </div>
+      <div className="text-center mt-4">
+        <Link href="/" className="text-blue-600 hover:underline">
+          Back to Home
+        </Link>
       </div>
     </div>
   )

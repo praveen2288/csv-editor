@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Trash2, Plus, ArrowUp, ArrowDown, ArrowUpDown, Search } from 'lucide-react'
+import Link from 'next/link'
 
 type SortConfig = {
   key: number;
@@ -225,6 +226,11 @@ export default function CSVEditor() {
           </Table>
         </div>
       )}
+      <div className="text-center mt-4">
+        <Link href="/" className="text-blue-600 hover:underline">
+          Back to Home
+        </Link>
+      </div>
     </div>
   )
 }
