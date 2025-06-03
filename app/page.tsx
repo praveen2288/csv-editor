@@ -38,6 +38,9 @@ export default function Home() {
         <Link href="/markdown" className="text-xl text-blue-600 hover:underline">
           Markdown Previewer
         </Link>
+        <Link href="/colorpicker" className="text-xl text-blue-600 hover:underline">
+          Color Picker / Converter
+        </Link>
       </div>
     </div>
   );
