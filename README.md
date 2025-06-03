@@ -59,6 +59,12 @@ Live Demo - https://snaptools.netlify.app/
   - Live preview while typing.
   - Supports common Markdown formatting like headings, lists and links.
 
+### Color Picker / Converter
+- **Description**: Choose colors and convert between HEX, RGB, and HSL.
+- **Features**:
+  - Live color preview.
+  - Bidirectional conversion between color formats.
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.
