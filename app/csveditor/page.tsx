@@ -131,6 +131,12 @@ export default function CSVEditor() {
 
   return (
     <div className="max-w-[90%] mx-auto p-4 bg-background">
+      <Link
+        href="/"
+        className="fixed top-4 left-4 text-blue-600 hover:underline"
+      >
+        Back to Home
+      </Link>
       <h1 className="text-2xl font-bold mb-4">CSV Editor</h1>
       <div className="flex flex-wrap gap-4 mb-4">
         <Button onClick={handleFileImport}>Import CSV</Button>
@@ -226,11 +232,6 @@ export default function CSVEditor() {
           </Table>
         </div>
       )}
-      <div className="text-center mt-4">
-        <Link href="/" className="text-blue-600 hover:underline">
-          Back to Home
-        </Link>
-      </div>
     </div>
   )
 }

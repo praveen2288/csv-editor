@@ -73,6 +73,12 @@ export default function DiffApp() {
 
   return (
     <div className="container mx-auto p-4">
+      <Link
+        href="/"
+        className="fixed top-4 left-4 text-blue-600 hover:underline"
+      >
+        Back to Home
+      </Link>
       <div className="grid grid-cols-2 gap-4">
         <div>
           <Textarea
@@ -102,11 +108,6 @@ export default function DiffApp() {
             </div>
           </ScrollArea>
         </div>
-      </div>
-      <div className="text-center mt-4">
-        <Link href="/" className="text-blue-600 hover:underline">
-          Back to Home
-        </Link>
       </div>
     </div>
   )

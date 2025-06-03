@@ -58,6 +58,12 @@ export default function PasswordGenerator() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 dark:bg-gray-900">
+      <Link
+        href="/"
+        className="fixed top-4 left-4 text-blue-600 hover:underline"
+      >
+        Back to Home
+      </Link>
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle className="text-2xl font-bold text-center">Password Generator</CardTitle>
@@ -128,9 +134,6 @@ export default function PasswordGenerator() {
           </Button>
         </CardContent>
       </Card>
-      <Link href="/" className="mt-4 text-blue-600 hover:underline">
-        Back to Home
-      </Link>
     </div>
   )
 }

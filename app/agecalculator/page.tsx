@@ -67,6 +67,12 @@ export default function Component() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
+      <Link
+        href="/"
+        className="fixed top-4 left-4 text-blue-600 hover:underline"
+      >
+        Back to Home
+      </Link>
       <Card className="w-full max-w-lg">
         <CardHeader>
           <CardTitle>Precise Age Calculator</CardTitle>
@@ -136,9 +142,6 @@ export default function Component() {
           </div>
         </CardContent>
       </Card>
-      <Link href="/" className="mt-4 text-blue-600 hover:underline">
-        Back to Home
-      </Link>
     </div>
   )
 }

@@ -170,6 +170,12 @@ export default function AdvancedCalculator() {
 
   return (
     <div className="w-full max-w-md mx-auto p-4 bg-background rounded-lg shadow-lg">
+      <Link
+        href="/"
+        className="fixed top-4 left-4 text-blue-600 hover:underline"
+      >
+        Back to Home
+      </Link>
       <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as CalculationType)} className="w-full">
         <TabsList className="grid w-full grid-cols-4 mb-4">
           <TabsTrigger value="standard">Standard</TabsTrigger>
@@ -289,11 +295,6 @@ export default function AdvancedCalculator() {
             <div key={index} className="text-sm mb-1">{item}</div>
           ))}
         </ScrollArea>
-      </div>
-      <div className="text-center mt-4">
-        <Link href="/" className="text-blue-600 hover:underline">
-          Back to Home
-        </Link>
       </div>
     </div>
   )
