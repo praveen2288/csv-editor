@@ -35,6 +35,9 @@ export default function Home() {
         <Link href="/jsonformatter" className="text-xl text-blue-600 hover:underline">
           JSON Formatter/Validator
         </Link>
+        <Link href="/color" className="text-xl text-blue-600 hover:underline">
+          Color Picker / Converter
+        </Link>
         <Link href="/markdown" className="text-xl text-blue-600 hover:underline">
           Markdown Previewer
         </Link>

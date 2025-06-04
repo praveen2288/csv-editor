@@ -53,6 +53,12 @@ Live Demo - https://snaptools.netlify.app/
   - Convert plain text into Base64.
   - Decode Base64 back to human-readable text.
 
+### Color Picker / Converter
+- **Description**: Select colors and convert between HEX, RGB and HSL values.
+- **Features**:
+  - Interactive color picker.
+  - Bi-directional conversion for HEX, RGB and HSL.
+
 ### Markdown Previewer
 - **Description**: Write Markdown and see the rendered preview side by side.
 - **Features**:
