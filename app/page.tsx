@@ -11,6 +11,12 @@ export default function Home() {
         <Link href="/csveditor" className="text-xl text-blue-600 hover:underline">
           CSV Editor
         </Link>
+        <Link href="/csvjson" className="text-xl text-blue-600 hover:underline">
+          CSV ↔ JSON Converter
+        </Link>
+        <Link href="/jsonyaml" className="text-xl text-blue-600 hover:underline">
+          JSON ↔ YAML Converter
+        </Link>
         <Link href="/cronparser" className="text-xl text-blue-600 hover:underline">
           Cron Parser
         </Link>
@@ -26,6 +32,9 @@ export default function Home() {
         <Link href="/passwordgenerator" className="text-xl text-blue-600 hover:underline">
           Password Generator
         </Link>
+        <Link href="/passwordstrength" className="text-xl text-blue-600 hover:underline">
+          Password Strength Meter
+        </Link>
         <Link href="/qrcode" className="text-xl text-blue-600 hover:underline">
           QR Code Generator
         </Link>
@@ -37,6 +46,9 @@ export default function Home() {
         </Link>
         <Link href="/color" className="text-xl text-blue-600 hover:underline">
           Color Picker / Converter
+        </Link>
+        <Link href="/colorcontrast" className="text-xl text-blue-600 hover:underline">
+          Color Contrast Checker
         </Link>
         <Link href="/markdown" className="text-xl text-blue-600 hover:underline">
           Markdown Previewer
