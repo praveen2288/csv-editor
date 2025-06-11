@@ -65,6 +65,30 @@ Live Demo - https://snaptools.netlify.app/
   - Live preview while typing.
   - Supports common Markdown formatting like headings, lists and links.
 
+### CSV ↔ JSON Converter
+- **Description**: Quickly convert between CSV and JSON formats.
+- **Features**:
+  - Convert CSV to JSON.
+  - Convert JSON to CSV.
+
+### JSON ↔ YAML Converter
+- **Description**: Convert data between JSON and YAML formats.
+- **Features**:
+  - Convert JSON to YAML.
+  - Convert YAML to JSON.
+
+### Color Contrast Checker
+- **Description**: Test color combinations for accessibility compliance.
+- **Features**:
+  - Enter foreground and background colors.
+  - See contrast ratio and WCAG results.
+
+### Password Strength Meter
+- **Description**: Evaluate the strength of a user-supplied password.
+- **Features**:
+  - Visual strength meter.
+  - Tips for creating stronger passwords.
+
 ## Getting Started
 
 To get a local copy up and running, follow these simple steps.
