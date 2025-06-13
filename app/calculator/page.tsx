@@ -7,6 +7,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import Link from 'next/link'
+import AdPlaceholder from '@/components/AdPlaceholder';
+import { trackEvent } from '@/lib/analytics';
 
 type CalculationType = 'standard' | 'length' | 'weight' | 'temperature'
 
@@ -128,6 +130,7 @@ export default function AdvancedCalculator() {
     setDisplay(String(newValue))
     setWaitingForOperand(true)
     setHistory([...history, `${currentValue} ${operator} ${inputValue} = ${newValue}`])
+    trackEvent("calculator_used", { calculation: `${currentValue} ${operator} ${inputValue} = ${newValue}`, operator });
   }
 
   const handleInput = useCallback((value: string) => {
@@ -288,6 +291,7 @@ export default function AdvancedCalculator() {
           <Input className="w-full text-right text-2xl mb-4 bg-muted" value={convertedValue} readOnly />
         </TabsContent>
       </Tabs>
+      <AdPlaceholder toolName="Calculator" />
       <div className="mt-4">
         <h3 className="text-lg font-semibold mb-2">History</h3>
         <ScrollArea className="h-40 rounded-md border p-2">

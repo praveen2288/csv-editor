@@ -53,6 +53,9 @@ export default function Home() {
         <Link href="/markdown" className="text-xl text-blue-600 hover:underline">
           Markdown Previewer
         </Link>
+        <Link href="/support" className="text-xl text-green-600 hover:underline font-semibold">
+          Support Us
+        </Link>
       </div>
     </div>
   );
