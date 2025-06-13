@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import AppInitializer from "@/components/AppInitializer";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
+import Link from 'next/link';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,9 +29,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        {children}
+        <AppInitializer />
+        <AnalyticsTracker />
+        <main className="flex-grow">
+          {children}
+        </main>
+        <footer className="w-full bg-gray-100 p-4 text-center text-sm text-gray-600 border-t">
+          <Link href="/terms.md" className="hover:underline mx-2">Terms of Service</Link> |
+          <Link href="/privacy.md" className="hover:underline mx-2">Privacy Policy</Link>
+          <p className="mt-2">© {new Date().getFullYear()} Snap Tools. All rights reserved.</p>
+          <p className="text-xs mt-1">Please review our terms and policies. For educational purposes only.</p>
+        </footer>
       </body>
     </html>
   );
